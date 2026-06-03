@@ -39,3 +39,9 @@ def parse_and_multiply(input_string):
         raise ValueError("Both parts must be valid numbers")
 
     return a * b
+
+
+def parse_and_subtract(input_string):
+    # Takes "10,2" and returns 8.0
+    parts = input_string.split(",")
+    return float(parts[0]) - float(parts[1])
