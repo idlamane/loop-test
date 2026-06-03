@@ -69,6 +69,17 @@ def parse_and_average(input_string):
 
 
 def parse_and_max(input_string):
-    # Takes "10,2,7" and returns 10.0
+    """Parse comma-separated numbers and return the maximum as a float.
+
+    Raises ValueError for empty input or non-numeric values.
+    """
+    if not input_string.strip():
+        raise ValueError("Input cannot be empty")
+
     parts = input_string.split(",")
-    return max(float(p) for p in parts)
+    try:
+        numbers = [float(p) for p in parts]
+    except ValueError:
+        raise ValueError("All parts must be valid numbers")
+
+    return max(numbers)
