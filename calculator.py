@@ -3,6 +3,21 @@ def divide(a, b):
 
 
 def parse_and_divide(input_string):
-    # Takes "10,2" and returns 5.0
+    """Parse two comma-separated numbers and return their quotient.
+
+    Raises ValueError for malformed input or division by zero.
+    """
     parts = input_string.split(",")
-    return divide(float(parts[0]), float(parts[1]))
+    if len(parts) != 2:
+        raise ValueError("Input must contain exactly two comma-separated numbers")
+
+    try:
+        a = float(parts[0])
+        b = float(parts[1])
+    except ValueError:
+        raise ValueError("Both parts must be valid numbers")
+
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+
+    return divide(a, b)
