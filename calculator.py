@@ -21,3 +21,8 @@ def parse_and_divide(input_string):
         raise ValueError("Cannot divide by zero")
 
     return divide(a, b)
+
+def parse_and_multiply(input_string):
+    # Takes "10,2" and returns 20.0
+    parts = input_string.split(",")
+    return float(parts[0]) * float(parts[1])
