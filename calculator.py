@@ -66,3 +66,9 @@ def parse_and_average(input_string):
     for p in parts:
         total += int(p)
     return total / len(parts)
+
+
+def parse_and_max(input_string):
+    # Takes "10,2,7" and returns 10.0
+    parts = input_string.split(",")
+    return max(float(p) for p in parts)
