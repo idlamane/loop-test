@@ -57,3 +57,12 @@ def parse_and_subtract(input_string):
         raise ValueError("Both parts must be valid numbers")
 
     return a - b
+
+
+def parse_and_average(input_string):
+    # Should take "10,20,30" (any count) and return the mean as a float
+    parts = input_string.split(",")
+    total = 0
+    for p in parts:
+        total += int(p)
+    return total / len(parts)
