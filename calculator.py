@@ -22,7 +22,20 @@ def parse_and_divide(input_string):
 
     return divide(a, b)
 
+
 def parse_and_multiply(input_string):
-    # Takes "10,2" and returns 20.0
+    """Parse two comma-separated numbers and return their product.
+
+    Raises ValueError for malformed input or non-numeric values.
+    """
     parts = input_string.split(",")
-    return float(parts[0]) * float(parts[1])
+    if len(parts) != 2:
+        raise ValueError("Input must contain exactly two comma-separated numbers")
+
+    try:
+        a = float(parts[0])
+        b = float(parts[1])
+    except ValueError:
+        raise ValueError("Both parts must be valid numbers")
+
+    return a * b
